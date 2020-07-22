@@ -1,0 +1,109 @@
+.navbar {
+    .nav-item {
+        .nav-link {
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            &:hover,
+            &:focus {
+                color: white;
+                background-color: $primary-hover;
+            }
+        }
+    }
+}
+.navbar-search-bx {
+    margin: auto 2rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    .navbar-search-input {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        margin-right: 0;
+        transition: width 0.5s ease;
+        padding: 0.25rem 0.5rem !important;
+        width: 200px;
+        &:focus {
+            width: 300px;
+        }
+    }
+    button {
+        margin-left: 0;
+        padding: $std-padding;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+//mobile responsive navbar
+.mb-nav {
+    display: none;
+    .mb-nav-toggler {
+        color: #333;
+    }
+    .mb-nav-list {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: #333;
+        opacity: 0.9;
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        padding: 2rem;
+        z-index: 9999;
+        animation: navbar-animation 0.5s ease forwards;
+        @keyframes navbar-animation {
+            0% {
+                opacity: 0.5;
+                transform: scale(0.7) translateY(-500px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0px);
+            }
+        }
+        &.active {
+            display: block;
+        }
+        .mb-nav-link {
+            display: block;
+            color: #fff;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:hover {
+                text-decoration: none;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 786px) {
+    .mb-nav {
+        display: block;
+        .mb-nav-toggler {
+            padding: auto;
+        }
+        .mb-nav-list {
+            display: none;
+        }
+    }
+    #navbar {
+        .navbar-nav {
+            display: none;
+        }
+        .navbar-search-bx {
+            display: none;
+        }
+    }
+}

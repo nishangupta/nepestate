@@ -1,0 +1,120 @@
+//index page css for real estate app
+.property-index {
+    margin-top: 1rem;
+}
+.hero {
+    width: auto;
+    height: 80vh;
+    background-image: url("/img/search-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .hero-caption {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        height: 80vh;
+        text-align: center;
+    }
+    .caption-text {
+        font-size: 3rem;
+        color: white;
+        text-shadow: 1px 2px 4px rgba(0, 0, 0, 1);
+    }
+    .hero-search-bx {
+        margin: auto;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        .navbar-search-input {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            margin-right: 0;
+            padding: 0.15rem 0.5rem !important;
+            width: auto;
+            font-size: 1.25rem;
+            cursor: text;
+        }
+        .hero-search-button {
+            margin-left: 0;
+            padding: 1rem;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background: #d93c23;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                background-color: #9c1114;
+            }
+            i {
+                color: white;
+            }
+        }
+    }
+}
+
+//features
+.feature-item {
+    padding: 2rem 0;
+    border: none;
+}
+.feature-item:hover {
+    border-left: 1px solid rgba(0, 0, 0, 0.25) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.25) !important;
+}
+.feature-hdr {
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3b4144;
+    letter-spacing: 0.15rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* guides */
+.guides-section {
+    background: #f9ede6;
+    padding: 3rem 0;
+    .guides-hdr {
+        color: #007882;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .guides-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #052286;
+    }
+    .guides-row {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .guides-col {
+        margin: 1rem 1rem 1rem 0;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .hero {
+        .caption-text {
+            font-size: 2rem;
+        }
+        .hero-search-bx {
+            width: 80vw;
+        }
+        .navbar-search-input {
+            padding: 0.15rem 0.5rem !important;
+            width: auto;
+            font-size: 1rem;
+            cursor: text;
+        }
+    }
+}

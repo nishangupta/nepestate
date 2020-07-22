@@ -1,0 +1,136 @@
+//Account css here
+.navbar {
+    margin-bottom: 0px;
+}
+.account-navigation {
+    position: fixed;
+    height: 100%;
+    width: 20vw;
+    left: 0;
+    background-color: white;
+    z-index: 1000;
+    .account-nav {
+        .profile-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding-top: 1rem;
+            .account-holder {
+                font-weight: normal;
+                margin: 5px 0;
+                font-size: 1rem;
+            }
+            .account-type {
+                font-size: 0.8rem;
+                font-weight: bold;
+                color: #888;
+            }
+        }
+        .account-nav-list {
+            a {
+                font-size: 1rem;
+                color: $primary-grey;
+                &:hover {
+                    text-decoration: none;
+                }
+                i {
+                    padding-right: 0.5rem;
+                }
+            }
+            li.active-link a {
+                color: #333;
+            }
+        }
+    }
+}
+.account-content {
+    position: absolute;
+    width: 80vw;
+    right: 0;
+    .jumbotron {
+        padding-top: 1rem;
+    }
+    .profile-changer {
+        .profile-pic-holder {
+            height: 100px;
+            width: 100px;
+            background-color: transparent;
+            border: 1px dotted grey;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .change-photo-bx {
+            position: relative;
+            width: auto;
+            height: auto;
+        }
+        .photo-input {
+            cursor: cell;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 3;
+        }
+    }
+}
+//switch css
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:checked + .slider {
+            background-color: $primary-color;
+        }
+
+        &:focus + .slider {
+            box-shadow: 0 0 1px $primary-color;
+        }
+
+        &:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 34px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 786px) {
+}
