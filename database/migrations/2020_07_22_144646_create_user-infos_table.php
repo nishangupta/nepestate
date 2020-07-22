@@ -19,7 +19,7 @@ class CreateUserInfosTable extends Migration
             $table->text('profile_img');
             $table->string('fullname');
             $table->integer('user_type');
-            $table->location('location');
+            $table->string('location');
             $table->boolean('rental_inquiries')->default(0);
             $table->string('job_title')->nullable();
             $table->timestamps();
