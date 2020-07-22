@@ -10,7 +10,6 @@ class UserController extends Controller
     {
         // $this->middleware();
     }
-useru
     public function index()
     {
         //
