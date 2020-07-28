@@ -23,9 +23,12 @@
 </head>
 <body>
     <div id="app">
-       @yield('layout-holder')
+        @include('inc.navbar')
+        <main class="py-0">
+            @yield('content')
+        </main>
+        @include('inc.footer')
     </div>
-    @include('sweetalert::alert')
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('js')
 </body>

@@ -19,6 +19,7 @@ Route::get('/real-estate/rent', 'PropertyController@rent')->name('property.rent'
 Route::get('/real-estate/buy', 'PropertyController@buy')->name('property.buy');
 Route::get('/real-estate/mortage', 'PropertyController@mortage')->name('property.mortage');
 
+//user accounts
 Route::get('/account/login', 'UserController@accountLogin')->name('user.login');
 Route::get('/account/user-profile', 'UserController@accountIndex')->name('user.account');
 Route::get('/account/saved-homes', 'UserController@savedHomes')->name('user.savedHomes');

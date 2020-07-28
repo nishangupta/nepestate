@@ -52,7 +52,7 @@ class UserController extends Controller
     }
     public function accountLogin()
     {
-        return view('real-esate.account-login');
+        return view('real-estate.login');
     }
     public function accountIndex()
     {

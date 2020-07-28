@@ -13,7 +13,7 @@ class CreateUserInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('user-infos', function (Blueprint $table) {
+        Schema::create('user_infos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->text('profile_img');

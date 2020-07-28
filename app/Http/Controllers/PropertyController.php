@@ -19,14 +19,12 @@ class PropertyController extends Controller
       ->orWhere('address', 'like', $searchInput)
       ->whereNotNull('onSale')
       ->paginate(10);
-
     $searchedProperty = true;
 
     if ($properties->count() == 0) {
-      $properties = Property::where('onSale', 1)->take(10)->get();
+      $properties = Property::where('onSale', 1)->latest()->take(40)->paginate(10);
       $searchedProperty = false;
     }
-
     $paginator = $properties->render()->paginator;
     $elements = $properties->render()->elements[0];
 

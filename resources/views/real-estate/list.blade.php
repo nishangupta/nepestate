@@ -9,7 +9,9 @@
           <div class="w-75">
             <h5 class="list-view-hdr">
               @if($searchedProperty)
-                {{count($properties)}} homes available in Nep-Estate Listed below
+              <span class="font-weight-bold">
+                {{$properties->total()}} homes available in Nep-Estate Listed below
+              </span>
               @else
                 No homes available with the keyword " <span class="text-info">{{request()->property}}</span> " <br>
                 You can see other Available homes below

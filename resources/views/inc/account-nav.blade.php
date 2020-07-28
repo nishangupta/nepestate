@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <nav class="account-nav" id="account-nav">
       <div class="profile-nav">
-        <i class="fas fa-user fa-2x"></i>
+        <i class="fas fa-user fa-2x pt-2"></i>
         <h6 class="account-holder">Roi Holas</h6>
         <p class="account-type">Home Buyer</p>
       </div>

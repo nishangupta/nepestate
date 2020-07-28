@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\user-info;
+use App\UserInfoFactory;
 use Faker\Generator as Faker;
 
-$factory->define(user-info::class, function (Faker $faker) {
+$factory->define(UserInfoFactory::class, function (Faker $faker) {
     return [
         //
     ];
