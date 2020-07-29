@@ -6,17 +6,19 @@
     <div class="user-login">
       <h1 class="text-center"><a href="{{route('property.index')}}" class="login-brand">NepEstate</a></h1>
       <h4 class="my-2">Sign in or Register to save your favourite homes</h4>
-      <form action="">
+      <form action="{{route('user.store')}}" method="POST">
+        @csrf
         <div class="form-group mt-4 mb-2">
-          <input type="text" placeholder="Email address" class="modal-email form-control">
+        <input type="text" placeholder="Email address" name="email" class="modal-email form-control" value="{{old('email')}}">
           <p class="d-none text-warning"><i class="fas fa-excamation-circle"></i> Email address</p>
         </div>
         <div class="form-group mb-2">
-          <input type="text" placeholder="Password" class="modal-email form-control">
+        <input type="text" placeholder="Password" class="modal-email form-control" name="password" value="{{old('password')}}">
           <p class="d-none text-warning"><i class="fas fa-excamation-circle"></i> Password</p>
         </div>
-        <button type="submit" class="btn btn-block primary-btn">Submit</button>
+        <button type="submit" class="btn btn-block primary-btn" onclick="this.form.submit()">Submit</button>
       </form>
+      <input type="hidden" user_email value="{{auth()->user()->email?? ''}}">
       <hr>
       <div>Or</div>
       <hr>
@@ -43,6 +45,29 @@
 
 
 @push('js')
+<script>
+$(document).ready(function(){
+  $userEmail = document.querySelector('[user_email]').value;
+    if($userEmail !== ''){
+      Swal.fire({
+      title:'You are already logged in as '+ $userEmail,
+      text:'Do you want to log out!',
+      icon:'question',
+      showCancelButton: true,
+      confirmButtonColor: '#0988A9',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout!'
+    }).then((result)=>{
+      if(result.value){
+        window.location.href = '/account/logout';
+      }else{
+        window.location.href= '/';
+      }
+    });
+  }
+ 
+})
+</script>
 @endpush
 
 

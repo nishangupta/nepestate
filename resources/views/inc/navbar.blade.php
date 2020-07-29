@@ -17,7 +17,22 @@
     <li class="nav-item"><a href="{{route('user.rentalResume')}}" class="nav-link">Rental Resune</a></li>
   </ul>
   <ul class="navbar-nav ml-auto">
+    @auth
+    <li class="nav-item dropdown">
+      <a href="{{route('user.login')}}" class="primary-btn dropdown-toggle" data-toggle="dropdown">Logged in as {{auth()->user()->name}}</a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
+        <a class="dropdown-item" href="{{route('user.account')}}">
+          <span class="dropdown-link" >User account</span>
+        </a>
+        <a class="dropdown-item" href="{{route('user.logout')}}">
+          <span class="dropdown-link" >Logout</span>
+        </a>
+      </div>
+    </li>
+    @endauth
+    @guest
     <a href="{{route('user.login')}}" class="primary-btn">Sign up or Log in</a>
+    @endguest
   </ul>
   <div class="mb-nav">
     <a href="#" class="nav-link mb-nav-toggler"><i class="fas fa-bars"></i></a>

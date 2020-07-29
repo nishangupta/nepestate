@@ -40,6 +40,11 @@
         border-bottom-left-radius: 0;
     }
 }
+//bootstrap default
+.dropdown-item:hover {
+    background-color: #81d4db;
+}
+
 //mobile responsive navbar
 .mb-nav {
     display: none;

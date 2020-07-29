@@ -21,6 +21,9 @@ Route::get('/real-estate/mortage', 'PropertyController@mortage')->name('property
 
 //user accounts
 Route::get('/account/login', 'UserController@accountLogin')->name('user.login');
+Route::get('/account/logout', 'UserController@accountLogout')->name('user.logout');
+Route::post('/account/login', 'UserController@store')->name('user.store');
+
 Route::get('/account/user-profile', 'UserController@accountIndex')->name('user.account');
 Route::get('/account/saved-homes', 'UserController@savedHomes')->name('user.savedHomes');
 Route::get('/account/rental-resume', 'UserController@accountRentalResume')->name('user.rentalResume');

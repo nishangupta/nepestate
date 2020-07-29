@@ -61,7 +61,7 @@ $std-padding: 0.25rem 0.5rem;
     }
 }
 
-body * {
+body {
     font-family: "Roboto", sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
@@ -78,7 +78,7 @@ button {
 .primary-btn {
     background-color: $primary-color;
     color: white;
-    transition: background, color 0.25s ease;
+    transition: background-color 0.25s ease;
     padding: 6px 8px;
     border: 1px solid $primary-color;
     border-radius: 8px;
@@ -90,7 +90,7 @@ button {
 .secondary-btn {
     background-color: $primary-hover;
     color: white;
-    transition: background, color 0.25s ease;
+    transition: background-color 0.25s ease;
     padding: 6px 8px;
     border: 1px solid $primary-hover;
     border-radius: 8px;
