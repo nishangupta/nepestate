@@ -10997,7 +10997,7 @@ a:hover {
   text-decoration: none;
 }
 
-body * {
+body {
   font-family: "Roboto", sans-serif;
   max-width: 100vw;
   overflow-x: hidden;
@@ -11015,7 +11015,7 @@ button {
 .primary-btn {
   background-color: #01adbb;
   color: white;
-  transition: background, color 0.25s ease;
+  transition: background-color 0.25s ease;
   padding: 6px 8px;
   border: 1px solid #01adbb;
   border-radius: 8px;
@@ -11029,7 +11029,7 @@ button {
 .secondary-btn {
   background-color: #007882;
   color: white;
-  transition: background, color 0.25s ease;
+  transition: background-color 0.25s ease;
   padding: 6px 8px;
   border: 1px solid #007882;
   border-radius: 8px;
@@ -11092,6 +11092,10 @@ button {
   padding: 0.25rem 0.5rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.dropdown-item:hover {
+  background-color: #81d4db;
 }
 
 .mb-nav {
