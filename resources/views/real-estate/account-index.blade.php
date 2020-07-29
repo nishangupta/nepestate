@@ -31,35 +31,36 @@
                 <form action="">
                   <div class="form-group">
                     <label for="">Email</label>
-                    <input type="text" class="form-control" placeholder="Email" name="email">
+                  <input type="text" class="form-control" placeholder="Email" name="email" value="{{$user->email}}">
                   </div>
                   <div class="form-group">
                     <label for="">Password</label>
-                    <input type="text" class="form-control" placeholder="Password" name="password">
+                  <input type="text" class="form-control" placeholder="Password" name="password"
+                  value="{{Auth::user()->getAuthPassword()}}">
                   </div>
                   <div class="form-group">
                     <label for="">Your Full Name</label>
-                    <input type="text" class="form-control" placeholder="name" name="name">
+                    <input type="text" class="form-control" placeholder="name" name="name" value="{{$user->name}}">
                   </div>
                   <div class="form-group">
                     <label for="">User Type</label>
                     <select name="" id="" class="form-control">
-                      <option value="">Home Buyer</option>
-                      <option value="">Home Seller</option>
-                      <option value="">Both Buyer and Seller</option>
-                      <option value="">Renter</option>
-                      <option value="">Rentee/Rent payer</option>
+                       @foreach ($userTypes as $val)
+                        <option value="{{$val->id}}" {{ $val->id == $user->userInfo->user_type ? 'selected':''}} >
+                          {{$val->user_type}}
+                        </option>
+                       @endforeach         
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="">Location</label>
-                    <input type="text" name="location" class="form-control">
+                    <input type="text" name="location" class="form-control" value="{{$user->userInfo->location ?? ''}}" >
                   </div>
                   <div class="form-group">
                     <div class="row">
                       <div class="col-2">
                         <label class="switch">
-                          <input type="checkbox">
+                          <input type="checkbox" {{$user->userInfo->rental_inquiries ? 'checked':''}} >
                           <span class="slider"></span>
                         </label>
                       </div>
@@ -73,7 +74,7 @@
                   </div>
                   <hr>
                   <div class="d-flex justify-content-end">
-                    <button class="btn btn-outline-dark mr-2">Cancel</button>
+                    <button class="btn btn-outline-dark mr-2" onclick="window.reload()">Cancel</button>
                     <button class="btn btn-danger">Save Profile</button>
                   </div>
                 </form>

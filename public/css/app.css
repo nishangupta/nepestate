@@ -11098,6 +11098,10 @@ button {
   background-color: #81d4db;
 }
 
+.dropdown-menu {
+  border-radius: 8px;
+}
+
 .mb-nav {
   display: none;
 }

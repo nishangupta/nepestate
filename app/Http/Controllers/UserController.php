@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\UserType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -113,10 +114,15 @@ class UserController extends Controller
         Auth::logout(auth()->user());
         return redirect()->route('login');
     }
+
     public function accountIndex()
     {
-        return view('real-estate.account-index');
+        $user = auth()->user();
+        $userTypes = UserType::all();
+        $userType = $user->userInfo->user_type;
+        return view('real-estate.account-index', compact('user', 'userTypes'));
     }
+
     public function accountRentalResume()
     {
         return view('real-estate.account-rental-resume');
