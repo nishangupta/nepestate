@@ -5,6 +5,7 @@
  */
 
 require("./bootstrap");
+window.swal = require("sweetalert2");
 
 window.Vue = require("vue");
 
@@ -31,12 +32,12 @@ Vue.component(
  */
 
 const app = new Vue({
-    el: "#app",
+    el: "#app"
 });
 
 //navbar for mobile
-$(document).ready(function () {
-    $(".mb-nav-toggler").on("click", function () {
+$(document).ready(function() {
+    $(".mb-nav-toggler").on("click", function() {
         toggleMobileNav();
     });
     function toggleMobileNav() {

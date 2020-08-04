@@ -16,7 +16,7 @@
               <p>Renter in New York,NY</p>
               <p>f0rget.m3not.sk24@gmail.com</p>
               <br>
-              <a class="text-success cursor-pointer" role="button" href="{{route('user.account')}}">Edit profile settings</a>
+              <a class="text-success cursor-pointer" role="button" href="{{route('page','user-profile')}}">Edit profile settings</a>
               <hr>
               <h6 class="text-muted">Share Settings</h6>
               <label for="SendMyRentalResume">

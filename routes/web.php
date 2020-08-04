@@ -24,6 +24,8 @@ Route::get('/account/login', 'UserController@accountLogin')->name('user.login');
 Route::get('/account/logout', 'UserController@accountLogout')->name('user.logout');
 Route::post('/account/login', 'UserController@store')->name('user.store');
 
-Route::get('/account/user-profile', 'UserController@accountIndex')->name('user.account');
-Route::get('/account/saved-homes', 'UserController@savedHomes')->name('user.savedHomes');
-Route::get('/account/rental-resume', 'UserController@accountRentalResume')->name('user.rentalResume');
+Route::get('/account/{page}', 'UserController')->name('page');
+
+Route::post('/account/user-profile', 'UserController@accountUpdate')->name('user.accountUpdate');
+Route::post('/account/user-profile/password-change', 'UserController@passwordChange')->name('user.account.passwordChange');
+Route::post('/account/user-profile/profile-img-change', 'UserController@profileImgChange')->name('user.account.profileImgChange');

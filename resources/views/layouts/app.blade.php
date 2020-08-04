@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Nepesate') }}</title>
+    <title>{{ $metaTitle ?? config('app.name', 'Nepesate') }}</title>
 
     <!-- Scripts -->
 
