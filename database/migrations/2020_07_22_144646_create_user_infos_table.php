@@ -18,7 +18,7 @@ class CreateUserInfosTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('profile_img');
             $table->string('fullname');
-            $table->integer('user_type');
+            $table->integer('user_type')->default(1);
             $table->string('location');
             $table->boolean('rental_inquiries')->default(0);
             $table->string('job_title')->nullable();

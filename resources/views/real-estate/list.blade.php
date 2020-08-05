@@ -40,7 +40,7 @@
               <div class="property-card" >
                 <img src="{{asset('img/camera.jpg')}}" alt="" class="img-fluid">
                 <div class="property-card-body border">
-                  <a href="{{route('property.show',['property'=>1])}}">
+                  <a href="{{route('property.show',['property'=>$property])}}">
                     <h5 class="property-price badge badge-info">${{number_format($property->price)}}</h5>
                     <div class="d-flex my-2">
                       <div class="badge badge-secondary"><i class="fas fa-bed"></i> {{$property->bed}} beds</div>
@@ -50,6 +50,7 @@
                     <p class="property-name">{{$property->name}}</p>
                     <p class="text-muted property-address">{{$property->address}}</p>
                   </a>
+                  <a href="{{route('property.show',['property'=>$property])}}" class="btn btn-block primary-btn">Check Availability</a>
                 </div>
               </div>
             </div>
@@ -93,8 +94,7 @@
           <div class="mapouter">
             <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
                 src="https://maps.google.com/maps?ll=27.7172453,85.3239605&q=Kathmandu&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>undefined<a
-                href="undefined">undefined</a>undefined</div>
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
             <style>
               .mapouter {
                 position: relative;

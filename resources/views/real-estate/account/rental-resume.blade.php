@@ -12,15 +12,15 @@
           <hr>
           <div class="row">
             <div class="col-md-4 col-sm-12">
-              <h6>Roi Holas</h6>
-              <p>Renter in New York,NY</p>
-              <p>f0rget.m3not.sk24@gmail.com</p>
+              <h6>{{strtoupper($user->name)}}</h6>
+              <p>Renter in {{$user->userInfo->location}}</p>
+              <p>{{$user->email}}</p>
               <br>
               <a class="text-success cursor-pointer" role="button" href="{{route('page','user-profile')}}">Edit profile settings</a>
               <hr>
               <h6 class="text-muted">Share Settings</h6>
               <label for="SendMyRentalResume">
-                <input type="checkbox" id="SendMyRentalResume">
+                <input type="checkbox" id="SendMyRentalResume" {{$user->userInfo->rental_inquiries ? 'checked':''}}> 
                 Always send my rental resume
                 <p class="text-muted px-3">
                   When checked, the information here will be included with all future rental inquires. It will not

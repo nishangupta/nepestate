@@ -172,19 +172,18 @@ function changePassword(){
   })
 }
 //profile pic viewer
-const profileImg = document.querySelector('#profile-pic-holder');
+const profileImg = document.getElementById('profile-pic-holder');
 profileImg.addEventListener('click',function(){
   let img = profileImg.childNodes[0];
   let imgUrl = img.getAttribute('src');
+  let height = img.clientHeight;
   swal.fire({
     imageUrl: imgUrl,
     imageWidth: 200,
-    imageHeight: 200,
+    imageHeight: height+height/2,
     confirmButtonText: 'Close',
   })
 });
-
-
 
 </script>
 @endpush
