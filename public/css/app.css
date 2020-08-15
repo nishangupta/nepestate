@@ -11045,6 +11045,12 @@ button {
   color: white;
 }
 
+.danger-btn:hover {
+  background-color: white;
+  color: #d93c23;
+  border: 1px solid #d93c23;
+}
+
 .navbar-brand {
   letter-spacing: 0.1rem;
   color: #007882 !important;
@@ -11169,7 +11175,7 @@ button {
   color: #01adbb;
 }
 
-@media (max-width: 786px) {
+@media (max-width: 960px) {
   .mb-nav {
     display: block;
   }
@@ -11198,7 +11204,6 @@ button {
 .hero {
   width: auto;
   height: 80vh;
-  background-image: url("/img/search-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

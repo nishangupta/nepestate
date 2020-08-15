@@ -85,8 +85,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div><!-- jumbotron -->
         @include('inc.account-footer')
+      </div><!--account-content -->
     </div>
   </main>
 @endsection

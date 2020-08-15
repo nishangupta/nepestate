@@ -3,7 +3,7 @@
 @section('content')
 <div class="property-index">
   <div class="container-fluid">
-    <section class="hero">
+  <section class="hero" style="background-image:url('{{asset('img/search-background.jpg')}}');">
       <div class="row">
         <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
           <div class="hero-caption">
@@ -122,7 +122,6 @@
 
 @push('css')
 <style>
-
 
 </style>
 @endpush
