@@ -38,6 +38,7 @@ class PropertyController extends Controller
     return view('real-estate.list')->with($bundle);
   }
 
+
   public function priceChanger()
   {
     $keyword = request()->keyword;
@@ -68,26 +69,43 @@ class PropertyController extends Controller
       'searchedProperty' => $searchedProperty
     ];
 
-    return view('real-estate.list')->with($bundle);
+    return view('real-estate.property.list')->with($bundle);
   }
 
   public function list()
   {
-    $properties = Property::paginate(6);
+    $properties = Property::where('onSale', 1)->latest()->take(30)->paginate(10);
+    $searchedProperty = false;
     $paginator = $properties->render()->paginator;
     $elements = $properties->render()->elements[0];
-    return view('real-estate.list')->with(
-      [
-        'properties' => $properties,
-        'paginator' => $paginator,
-        'elements' => $elements
-      ]
-    );
+
+    $bundle = [
+      'properties' => $properties,
+      'paginator' => $paginator,
+      'elements' => $elements,
+      'searchedProperty' => $searchedProperty
+    ];
+
+    return view('real-estate.property.list')->with($bundle);
   }
+
   public function show(Property $property)
   {
     $userCanLike = Property::where('created_at', $property->created_at)->where('id', '<>', $property->id)->take(4)->get();
     $property->userCanLike = $userCanLike;
-    return view('real-estate.show')->with('property', $property);
+    return view('real-estate.property.show')->with('property', $property);
+  }
+
+  public function buy()
+  {
+    return redirect()->route('property.list');
+  }
+  public function rent()
+  {
+    return view('real-estate.property.rent');
+  }
+  public function mortage()
+  {
+    return view('real-estate.property.mortage');
   }
 }

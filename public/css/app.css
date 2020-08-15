@@ -11266,23 +11266,15 @@ button {
 }
 
 .feature-item:hover {
-  border-left: 1px solid rgba(0, 0, 0, 0.25) !important;
-  border-right: 1px solid rgba(0, 0, 0, 0.25) !important;
-}
-
-.feature-hdr {
-  margin: 2rem 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #3b4144;
-  letter-spacing: 0.15rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-left: 1px solid #f6cccd !important;
+  border-right: 1px solid #d4fafd !important;
+  background: linear-gradient(to right, #d4fafd, #f6cccd);
 }
 
 /* guides */
 
 .guides-section {
-  background: #f9ede6;
+  background: #faf7f5;
   padding: 3rem 0;
 }
 
@@ -11311,7 +11303,7 @@ button {
 
 @media screen and (max-width: 786px) {
   .hero .caption-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .hero .hero-search-bx {
@@ -11323,6 +11315,10 @@ button {
     width: auto;
     font-size: 1rem;
     cursor: text;
+  }
+
+  .hero .hero-search-bx .hero-search-button {
+    padding: 0.5rem;
   }
 }
 
@@ -11456,6 +11452,16 @@ button {
 
 .google-map {
   position: fixed;
+}
+
+.list-footer {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.list-footer-text {
+  font-size: 0.8rem;
+  color: grey;
 }
 
 .navbar {

@@ -8,6 +8,7 @@ require("./bootstrap");
 window.swal = require("sweetalert2");
 
 window.Vue = require("vue");
+window.Chart = require("chart.js");
 
 /**
  * The following block of code may be used to automatically register your
