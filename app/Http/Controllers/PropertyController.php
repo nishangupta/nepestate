@@ -35,7 +35,7 @@ class PropertyController extends Controller
       'searchedProperty' => $searchedProperty
     ];
 
-    return view('real-estate.list')->with($bundle);
+    return view('real-estate.property.list')->with($bundle);
   }
 
 
