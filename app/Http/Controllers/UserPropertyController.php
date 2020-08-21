@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Property;
-use App\UserType;
 use DataTables;
-use RealRashid\SweetAlert\Facades\Alert;
+
 
 class UserPropertyController extends Controller
 {
@@ -27,10 +26,7 @@ class UserPropertyController extends Controller
         ->rawColumns(['actions'])
         ->make(true);
     }
-    $user = auth()->user();
-    $userTypes = UserType::all();
-    $userType = UserType::find($user->userInfo->user_type);
-    return view('real-estate.account.property-listings', compact('user', 'userType', 'userTypes'));
+    return view('real-estate.account.property-listings');
   }
 
   public function show(Request $request, Property $property)

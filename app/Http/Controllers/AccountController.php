@@ -28,10 +28,7 @@ class AccountController extends Controller
         // }
 
         $metaTitle = str_replace('-', ' ', ucwords($page));
-        $user = auth()->user();
-        $userTypes = UserType::all();
-        $userType = UserType::find($user->userInfo->user_type);
-        return view('real-estate.account.' . $page, compact('user', 'userTypes', 'userType', 'metaTitle'));
+        return view('real-estate.account.' . $page, compact('metaTitle'));
     }
     public function accountLogin()
     {
