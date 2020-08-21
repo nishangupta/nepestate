@@ -22,8 +22,8 @@ class CreatePropertiesTable extends Migration
             $table->unsignedMediumInteger('bed');
             $table->unsignedMediumInteger('bath');
             $table->unsignedBigInteger('area');
-            $table->string('agent');
-            $table->string('owner');
+            $table->string('agent')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->boolean('onSale');
             $table->timestamps();
         });

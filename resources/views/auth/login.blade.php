@@ -18,6 +18,9 @@
         </div>
         <button type="submit" class="btn btn-block primary-btn" onclick="this.form.submit()">Submit</button>
       </form>
+      <div class="text-right py-2">
+        <a href="{{route('password.request')}}" class="text-light">Forgot Password ?</a>
+      </div>
       <input type="hidden" user_email value="{{auth()->user()->email?? ''}}">
       <hr>
       <div>Or</div>

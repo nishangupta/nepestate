@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <h2 class="page-header text-info">${{$property->price}}</h2>
+              <h2 class="page-header text-info">${{ number_format($property->price,0,'.',',')}}</h2>
               <p>Est.Mortgage $4,706/mo</p>
               <div class="d-flex my-2 btn-group">
                 <button class="btn btn-sm btn-info">Get Pre-Qualified</button>
@@ -37,28 +37,25 @@
           <hr>
           <div class="descripion my-3">
             <h5 class="text-bold">Description</h5>
-            <p class="lead">{{$property->descripion}}</p>
+            <p class="lead">{{$property->description}}</p>
           </div>
           <hr>
           <div class="property-details my-3">
             <h5 class="text-bold">Home Details for {{$property->name}}</h5>
             <div class="row">
               <div class="col">
-                <ul>
-                  <li>Sinasdgle family home</li>
-                  <li>asdasdSasdingle asd home</li>
-                  <li>Single family home</li>
-                  <li>Sinasdasgle asasdd home</li>
-                  <li>Single family home</li>
+                <ul class="">
+                  <li>This area far as my views is not for kids. It’s pretty much no where for them to really play safely especially if they are riding bikes. This is more of a college area and young adults who are lookin to hang out pretty much.</li>
+                  <li>I love it here. Less children the better. A playground for singles and young couples with NO children. Great place to be able to entertain at your home with out fear of neighbors complaining</li>
+                  <li>It’s not safe for small children, it’s mostly for young adults. It’s noisy and there’s not much room for them to play, I suggest some of the suburbs like Kennesaw or lithia springs maybe</li>
                 </ul>
               </div>
               <div class="col">
                 <ul>
-                  <li>Sasdingle family home</li>
+                  <li>Lots of trees and green space. Children friendly as lots of fields and grassy areas for them to play.</li>
                   <li>asdfasdasdamily asdfamily home</li>
-                  <li>Single familasdy home</li>
-                  <li>Single asd home</li>
-                  <li>Singasdasdle family asd</li>
+                  <li>Two hours each day and I just want a good area to stay and get to work on time . So I hope this is a good area to stay</li>
+                  <li>Not for families. It’s great for single or couples. But not a good environment for kids or raising a family</li>
                 </ul>
               </div>
             </div>
@@ -68,10 +65,97 @@
         </div> <!-- property-desc-grid row end-->
       </div>
       <hr>
-      <div class="jumbotron">
+      <section class="review-section">
+        <div class="container">
+          <div class="review-section-hdr my-2">
+            <h2 class="page-header">What locals say</h2>
+            <p class="text-muted pb-3">At least 131 Nepestate users voted on this feature. </p>
+          </div>
+          <div class="review-bdy">
+            <div class="row">
+              <div class="col-md-4 col-lg-4 col-sm-6">
+                <div class="review-block">
+                  <button type="button" class="btn btn-outline-info">
+                    <i class="fas fa-thumbs-up"></i>
+                    78%
+                  </button>
+                  <div class="review-text">
+                    <i class="fas fa-paw"></i>
+                    It's dog friendly.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-sm-6">
+                <div class="review-block">
+                  <button type="button" class="btn btn-outline-info">
+                    <i class="fas fa-thumbs-up"></i>
+                    78%
+                  </button>
+                  <div class="review-text">
+                    <i class="fas fa-walking"></i>
+                    There's a side walk.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-sm-6">
+                <div class="review-block">
+                  <button type="button" class="btn btn-outline-info ">
+                    <i class="fas fa-thumbs-up"></i>
+                    78%
+                  </button>
+                  <div class="review-text">
+                    <i class="fas fa-bolt"></i>
+                    Street are well light.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-lg-4 col-sm-6">
+                <div class="review-block">
+                  <button type="button" class="btn btn-outline-info">
+                    <i class="fas fa-thumbs-up"></i>
+                    78%
+                  </button>
+                  <div class="review-text">
+                    <i class="fas fa-utensils"></i>
+                    Resturants available here.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-sm-6">
+                <div class="review-block">
+                  <button type="button" class="btn btn-outline-info">
+                    <i class="fas fa-thumbs-up"></i>
+                    78%
+                  </button>
+                  <div class="review-text">
+                    <i class="fas fa-glass-cheers"></i>
+                    Holiday enjoyable.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-4 col-sm-3">
+                <div class="review-block">
+                  <button type="button" class="btn btn-outline-info">
+                    <i class="fas fa-thumbs-up"></i>
+                    78%
+                  </button>
+                  <div class="review-text">
+                    <i class="fas fa-assistive-listening-systems "></i>
+                    It's quiet.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <p class="text-small text-muted">Learn more about our methodology.</p>
+        </div>
+      </section>
+
+      <section class="jumbotron py-4">
         <div class="similar-properties-container">
           <h3>Similar Homes You May Like</h3>
-          <br>
+          <hr>
           <div class="row">
             @foreach($property->userCanLike as $miniProperty)
             <div class="col-lg-3 col-md-6 col-sm-6 my-2">
@@ -80,7 +164,7 @@
                 <div class="card ">
                   <img src="{{asset('img/realestate2.jpg')}}" class="img-fluid" alt="">
                   <div class="card-body">
-                    <h3 class="page-header text-info">${{$miniProperty->price}}</h3>
+                    <h3 class="text-info">${{ number_format($miniProperty->price,0,'.',',') }}</h3>
                     <div class="d-grid mt-2">
                       <div class="badge badge-secondary"><i class="fas fa-bed"></i> {{$miniProperty->bed}} beds</div>
                       <div class="badge badge-secondary"><i class="fas fa-bath"></i> {{$miniProperty->bath}} baths</div>
@@ -91,12 +175,12 @@
                   </div>
                 </div>
               </div>
-            </a>
+              </a>
             </div>
             @endforeach
           </div>
         </div>
-      </div>
+      </section>
     </div><!--Property desc Grid-->
   </div>
 </div>
@@ -212,12 +296,29 @@
     padding: 0.5rem 0;
   }
 }
+
 .similar-property {
-  border:2px solid #666;
   cursor: pointer;
   box-shadow:0 0 0 20px 40px rgba(0,0,0,.2);
 }
-
+/* review section */
+.review-section{
+  background:linear-gradient(to bottom right,#ffffff,#f6f4f3);
+  padding:2rem auto;
+  margin:2rem 0;
+}
+.review-block{
+  display:flex;
+  align-items: center;
+  margin-bottom:1rem;
+}
+.review-block:hover{
+  cursor:pointer;
+  background:linear-gradient(to right,#e8e9ea,#b3edf1);
+}
+.review-text{
+  padding-left:2rem;
+}
 </style>
 @endpush
 

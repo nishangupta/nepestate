@@ -1,10 +1,6 @@
 @extends('layouts.account-layout')
 
 @section('content')
-  <main>
-    <div class="account-view">
-      {{-- Account Navbar here --}}
-     @include('inc.account-nav')
       <div class="account-content container-fluid">
         <div class="jumbotron">
           <h2 class="page-header">Edit Profile</h2>
@@ -87,8 +83,6 @@
         </div>
         @include('inc.account-footer')
       </div>
-    </div>
-  </main>
 @endsection
 
 

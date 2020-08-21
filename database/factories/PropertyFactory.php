@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Property;
+use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(Property::class, function (Faker $faker) {
@@ -15,7 +16,7 @@ $factory->define(Property::class, function (Faker $faker) {
         'bath' => $faker->biasedNumberBetween(0, 4),
         'area' => $faker->biasedNumberBetween(200, 2300),
         'agent' => $faker->name('male'),
-        'owner' => $faker->name(),
+        'user_id' => factory(User::class)->create(),
         'onSale' => $faker->boolean()
     ];
 });

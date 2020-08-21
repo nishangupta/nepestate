@@ -120,14 +120,6 @@
 
 @push('css')
 <style>
-.list-footer {
-  margin: 2rem 0;
-  padding: 0 1rem;
-}
-.list-footer-text {
-        font-size: 0.8rem;
-        color: grey;
-}
 </style>
 @endpush
 

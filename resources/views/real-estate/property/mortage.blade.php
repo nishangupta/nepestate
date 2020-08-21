@@ -133,10 +133,11 @@
              
             <div class="card">
               <div class="card-header accordion-header">
-                <h2 class="mb-0">
-                  <p class="lead"  data-toggle="collapse" data-target="#collapseZero">
+                <h2 class="mb-0 faq-accordion-hdr" data-toggle="collapse" data-target="#collapseZero">
+                  <p class="lead" >
                     How much do you need to put down a house? 
                   </p>
+                  <i class="fas fa-chevron-down fas-text"></i>
                 </h2>
               </div>
               <div id="collapseZero" class="collapse hide">
@@ -147,10 +148,11 @@
             </div>
             <div class="card">
               <div class="card-header accordion-header">
-                <h2 class="mb-0">
-                  <p class="lead" type="button" data-toggle="collapse" data-target="#collapseOne">
+                <h2 class="mb-0 faq-accordion-hdr" data-toggle="collapse" data-target="#collapseOne">
+                  <p class="lead" >
                     How do I choose a mortgage lender?
                   </p>
+                  <i class="fas fa-chevron-down fas-text"></i>
                 </h2>
               </div>
               <div id="collapseOne" class="collapse hide">
@@ -161,10 +163,11 @@
             </div>
             <div class="card">
               <div class="card-header accordion-header">
-                <h2 class="mb-0">
-                  <p class="lead" type="button" data-toggle="collapse" data-target="#collapseTwo">
+                <h2 class="mb-0 faq-accordion-hdr" data-toggle="collapse" data-target="#collapseTwo">
+                  <p class="lead" >
                     How much mortgage can I afford?
                   </p>
+                  <i class="fas fa-chevron-down fas-text"></i>
                 </h2>
               </div>
               <div id="collapseTwo" class="collapse hide">
@@ -175,10 +178,11 @@
             </div>
             <div class="card">
               <div class="card-header accordion-header">
-                <h2 class="mb-0">
-                  <p class="lead" type="button" data-toggle="collapse" data-target="#collapseThree">
+                <h2 class="mb-0 faq-accordion-hdr" data-toggle="collapse" data-target="#collapseThree">
+                  <p class="lead" >
                     What is mortgage pre-qualification?
                   </p>
+                  <i class="fas fa-chevron-down fas-text"></i>
                 </h2>
               </div>
               <div id="collapseThree" class="collapse hide">
@@ -189,10 +193,11 @@
             </div>
             <div class="card">
               <div class="card-header accordion-header">
-                <h2 class="mb-0">
-                  <p class="lead" type="button" data-toggle="collapse" data-target="#collapseFour">
+                <h2 class="mb-0 faq-accordion-hdr" data-toggle="collapse" data-target="#collapseFour">
+                  <p class="lead" type="button" >
                     How do I qualify to buy a home?
                   </p>
+                  <i class="fas fa-chevron-down fas-text"></i>
                 </h2>
               </div>
               <div id="collapseFour" class="collapse hide">
@@ -319,6 +324,15 @@ $(document).ready(function(){
   width:10rem;
   height:auto;
   margin: 2rem;
+}
+.fas-text{
+  font-size:1.25rem;
+  color:grey;
+}
+.faq-accordion-hdr{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>
 @endpush

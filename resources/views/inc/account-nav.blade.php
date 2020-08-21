@@ -14,11 +14,11 @@
         <li class="list-group-item list-group-item-action {{ request()->segment(2) == 'rental-resume' ? 'active-link': '' }}">
           <a href="{{route('page','rental-resume')}}" title="Rental resume"><i class="fas fa-address-card"></i> <span class="account-nav-list-text"> Rental Resume</span></a>
         </li>
+        <li class="list-group-item list-group-item-action {{ request()->segment(2) == 'property-listings' ? 'active-link': '' }}">
+          <a href="{{route('user.propertyListings')}}" title="My property listings"><i class="fas fa-building"></i> <span class="account-nav-list-text"> My Property Listings</span></a>
+        </li>
         <li class="list-group-item list-group-item-action {{ request()->segment(2) == 'saved-homes' ? 'active-link': '' }}">
           <a href="{{route('page','saved-homes')}}" title="Saved homes"><i class="fas fa-search"></i><span class="account-nav-list-text"> Saved Searches</span></a>
-        </li>
-        <li class="list-group-item list-group-item-action">
-          <a href="#" title="My rental rooms"><i class="fas fa-building"></i> <span class="account-nav-list-text"> My Rooms for Rent</span></a>
         </li>
         <li class="list-group-item list-group-item-action">
           <a href="#" title="Notification Preferences"><i class="fas fa-envelope"></i> <span class="account-nav-list-text"> Notification Preferences</span></a>
