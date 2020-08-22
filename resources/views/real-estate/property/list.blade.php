@@ -4,7 +4,7 @@
 <main>
   <div class="property-list-view">
     <div class="row">
-      <div class="col-md-6 col-sm-12">
+      <div class="col-md-7 col-sm-12">
         <div class="list-view-top d-flex justify-content-between">
           <div class="w-75">
             <h5 class="list-view-hdr">
@@ -38,7 +38,7 @@
             @foreach ($properties as $property)
             <div class="col-md-6 col-sm-6">
               <div class="property-card" >
-                <img src="{{asset('img/camera.jpg')}}" alt="" class="img-fluid">
+                <img src="{{asset($property->img_url)}}" alt="" class="img-fluid">
                 <div class="property-card-body border">
                   <a href="{{route('property.show',['property'=>$property])}}">
                     <h5 class="property-price badge badge-info">${{number_format($property->price)}}</h5>
@@ -89,13 +89,16 @@
           </p>
         </div>
       </div><!-- property list -->
-      <div class="col-md-6 col-sm-12">
+      <div class="col-md-5 col-sm-12">
         <div class="google-map" id="google-map">
           <div class="mapouter">
-            <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
+            <div class="gmap_canvas"><iframe width="500" height="500" id="gmap_canvas"
                 src="https://maps.google.com/maps?ll=27.7172453,85.3239605&q=Kathmandu&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
             <style>
+              .google-map{
+                width:100%;
+              }
               .mapouter {
                 position: relative;
                 text-align: right;
@@ -106,8 +109,8 @@
               .gmap_canvas {
                 overflow: hidden;
                 background: none !important;
-                height: 500px;
-                width: 600px;
+                height: 100%;
+                width: 100%;
               }
             </style>
           </div>

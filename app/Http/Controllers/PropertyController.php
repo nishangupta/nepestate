@@ -91,7 +91,7 @@ class PropertyController extends Controller
 
   public function show(Property $property)
   {
-    $userCanLike = Property::where('created_at', $property->created_at)->where('id', '<>', $property->id)->take(4)->get();
+    $userCanLike = Property::where('id', '<>', $property->id)->latest()->take(4)->get();
     $property->userCanLike = $userCanLike;
     return view('real-estate.property.show', compact('property'));
   }

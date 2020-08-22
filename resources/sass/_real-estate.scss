@@ -3,8 +3,10 @@
 @import "inc/roboto-font";
 @import "inc/default";
 @import "inc/navbar";
+//for pages in views folder
 @import "pages/index-page";
-@import "pages/list-page";
-@import "pages/account-page";
+@import "pages/property";
+@import "pages/account";
+
 @import "pages/login-page";
 @import "inc/footer";

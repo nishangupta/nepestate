@@ -11,7 +11,7 @@
             <p class="lead">You haven't added any homes yet.</p>
             <p class="lead">Start Searching for property to add now.</p>
             <br>
-            <button class="btn danger-btn">Search homes</button>
+          <a href="{{route('property.index')}}" class="btn danger-btn">Search homes</a>
           </div>
         </div>
       </div>
