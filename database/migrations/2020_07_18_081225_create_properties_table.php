@@ -20,11 +20,12 @@ class CreatePropertiesTable extends Migration
             $table->string('address');
             $table->text('description');
             $table->unsignedMediumInteger('bed');
+            $table->string('img_url');
             $table->unsignedMediumInteger('bath');
             $table->unsignedBigInteger('area');
             $table->string('agent')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->boolean('onSale');
+            $table->boolean('onSale')->default(1);
             $table->timestamps();
         });
     }

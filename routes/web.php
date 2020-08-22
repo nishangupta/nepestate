@@ -31,9 +31,12 @@ Route::group(['prefix' => 'account'], function () {
     ->where('page', 'user-profile|saved-homes|rental-resume');
 
   Route::get('/property-listings', 'UserPropertyController@index')->name('user.propertyListings');
+  Route::get('/property-listings/create', 'UserPropertyController@create')->name('user.propertyCreate');
   Route::get('/property-listings/{property}', 'UserPropertyController@show')->name('user.propertyShow');
-  Route::get('/property-listings/{property}/edit', 'UserPropertyController@edit')->name('user.PropertyEdit');
-  Route::delete('/property-listings/{property}', 'UserPropertyController@destroy')->name('user.PropertyDestroy');
+  Route::post('/property-listings', 'UserPropertyController@store')->name('user.propertyStore');
+  Route::get('/property-listings/{property}/edit', 'UserPropertyController@edit')->name('user.propertyEdit');
+  Route::put('/property-listings/{property}', 'UserPropertyController@update')->name('user.propertyUpdate');
+  Route::delete('/property-listings/{property}', 'UserPropertyController@destroy')->name('user.propertyDestroy');
 
   Route::post('/user-profile', 'AccountController@accountUpdate')->name('user.accountUpdate');
   Route::post('/user-profile/password-change', 'AccountController@passwordChange')->name('user.account.passwordChange');

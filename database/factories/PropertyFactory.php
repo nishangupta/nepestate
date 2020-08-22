@@ -16,6 +16,7 @@ $factory->define(Property::class, function (Faker $faker) {
         'bath' => $faker->biasedNumberBetween(0, 4),
         'area' => $faker->biasedNumberBetween(200, 2300),
         'agent' => $faker->name('male'),
+        'img_url' => 'storage/properties/background11598078626.jpg',
         'user_id' => factory(User::class)->create(),
         'onSale' => $faker->boolean()
     ];

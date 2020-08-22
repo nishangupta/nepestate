@@ -5,7 +5,7 @@
     <div class="jumbotron">
       <h2 class="page-header">My Property Listings</h2>
       <hr>
-      <a href="route('')" type="button" class="btn primary-btn">Add a new Listings</a>
+      <a href="{{route('user.propertyCreate')}}" class="btn primary-btn">Add a new Listings</a>
       <div class="row">
         <div class="col-lg-12 col-sm-12">
           <div class="my-4">
@@ -15,8 +15,8 @@
                   <tr>
                     <th>Id</th>
                     <th>Title</th>
-                    <th>Address</th>
-                    <th>Status</th>
+                    <th>Image</th>
+                    <th>On sale(1/0)</th>
                     <th>Created At</th>
                     <th>Actions</th>
                   </tr>
@@ -39,14 +39,12 @@ function tableView(e){
   let data = e;
   console.log(data);
 }
-function tableEdit(){
-  alert(this);
-}
 function tableDelete(id){
   swal.queue([{
     icon:'info',
     title: 'Delete property listing ?',
-    confirmButtonText: 'Yes!',
+    confirmButtonText: 'Yes',
+    showCancelButton: true,
     showLoaderOnConfirm: true,
     preConfirm:()=>{
       $.ajaxSetup({
@@ -92,13 +90,12 @@ $(function(){
     columns:[
       {data:'id',name:'id'},
       {data:'name',name:'name'},
-      {data:'address',name:'address'},
+      {data:'image',name:'image'},
       {data:'onSale',name:'onSale'},
       {data:'created_at',name:'created_at'},
       {data:'actions',name:'actions',orderable:false,searchable:false},
     ]
   });
-
 });
 </script>
 @endpush
@@ -109,6 +106,10 @@ $(function(){
 <style> 
 .jumbotron{
   min-height:80vh;
+}
+.datatable-img{
+  width:8rem;
+  height:8rem;
 }
 </style>
 @endpush
