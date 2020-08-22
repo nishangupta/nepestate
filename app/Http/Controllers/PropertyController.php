@@ -74,7 +74,7 @@ class PropertyController extends Controller
 
   public function list()
   {
-    $properties = Property::where('onSale', 1)->latest()->take(30)->paginate(10);
+    $properties = Property::where('onSale', 1)->latest()->take(50)->paginate(12);
     $searchedProperty = false;
     $paginator = $properties->render()->paginator;
     $elements = $properties->render()->elements[0];
