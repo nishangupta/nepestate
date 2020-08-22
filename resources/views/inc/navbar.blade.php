@@ -14,7 +14,7 @@
   </ul>
   <ul class="navbar-nav mx-auto">
     <li class="nav-item"><a href="{{route('page','saved-homes')}}" class="nav-link">Saved Homes</a></li>
-    <li class="nav-item"><a href="{{route('page','rental-resume')}}" class="nav-link">Rental Resune</a></li>
+    <li class="nav-item"><a href="{{route('page','rental-resume')}}" class="nav-link">Rental Resume</a></li>
   </ul>
   <ul class="navbar-nav ml-auto">
     @auth
