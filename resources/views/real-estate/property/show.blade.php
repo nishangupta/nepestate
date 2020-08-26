@@ -6,7 +6,7 @@
       <img src="{{asset($property->img_url)}}" alt="" class="primary-image">
       <a href="{{asset('img/property/18.jpg')}}" data-lightbox="property" alt="" title="click to see more" class="lightbox-container">
         <div class="overlay-lightbox">See more photos</div>
-        <img src="{{asset('img/property/5.jpg')}}" alt="" class="secondary-image">
+        <img src="{{asset($property->img_url)}}" alt="" class="secondary-image">
         <a href="{{asset('img/property/19.jpg')}}" data-lightbox="property" class="d-none"></a>
         <a href="{{asset('img/property/12.jpg')}}" data-lightbox="property" class="d-none"></a>
         <a href="{{asset('img/property/15.jpg')}}" data-lightbox="property" class="d-none"></a>
