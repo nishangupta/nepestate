@@ -22,4 +22,17 @@ class AccountCrudTest extends TestCase
 
         $this->assertCount(1, User::all());
     }
+
+    /** @test */
+    public function property_can_be_edited()
+    {
+        $this->withoutExceptionHandling();
+
+        $response = $this->post('/account/login', [
+            'email' => 'admin@admin.com',
+            'password' => 'password'
+        ]);
+
+        $this->assertCount(1, User::all());
+    }
 }

@@ -15,7 +15,7 @@ Route::group(['prefix' => 'real-estate'], function () {
   Route::get('/buy', 'PropertyController@buy')->name('property.buy');
   Route::get('/rent', 'PropertyController@rent')->name('property.rent');
   Route::get('/mortage', 'PropertyController@mortage')->name('property.mortage');
-  Route::get('/{property}', 'PropertyController@show')->name('property.show');
+  Route::get('/{property}-{slug}', 'PropertyController@show')->name('property.show');
 });
 
 //user accounts
