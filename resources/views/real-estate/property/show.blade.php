@@ -164,7 +164,7 @@
           <div class="row">
             @foreach($property->userCanLike as $miniProperty)
             <div class="col-lg-3 col-md-6 col-sm-6 my-2">
-              <a href="{{route('property.show',['property'=>$miniProperty])}}">
+              <a href="{{$property->path()}}">
               <div class="similar-property">
                 <div class="card ">
                   <img src="{{asset($miniProperty->img_url)}}" class="img-fluid mini-property-img" alt="">

@@ -40,7 +40,7 @@
               <div class="property-card" >
                 <img src="{{asset($property->img_url)}}" alt="" class="img-fluid">
                 <div class="property-card-body border">
-                  <a href="{{route('property.show',['property'=>$property])}}">
+                  <a href="{{$property->path()}}">
                     <h5 class="property-price badge badge-info">${{number_format($property->price)}}</h5>
                     <div class="d-flex my-2">
                       <div class="badge badge-secondary"><i class="fas fa-bed"></i> {{$property->bed}} beds</div>
@@ -50,7 +50,7 @@
                     <p class="property-name">{{$property->name}}</p>
                     <p class="text-muted property-address">{{$property->address}}</p>
                   </a>
-                  <a href="{{route('property.show',['property'=>$property])}}" class="btn btn-block primary-btn">Check Availability</a>
+                  <a href="{{$property->path()}}" class="btn btn-block primary-btn">Check Availability</a>
                 </div>
               </div>
             </div>

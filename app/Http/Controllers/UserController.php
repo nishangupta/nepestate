@@ -16,15 +16,6 @@ class UserController extends Controller
     {
         $this->middleware('auth', ['except' => 'store']);
     }
-    public function index()
-    {
-        //
-    }
-
-    public function create()
-    {
-        //
-    }
 
     public function store(Request $request)
     {
@@ -84,6 +75,16 @@ class UserController extends Controller
                 return redirect('/login')->withInput();
             }
         }
+    }
+
+    public function index()
+    {
+        //
+    }
+
+    public function create()
+    {
+        //
     }
 
     public function show($id)
