@@ -32,6 +32,7 @@ Nepestate is a Real-estate website made with laravel and vue js.
   <a href="https://ibb.co/HGxGYvs"><img src="https://i.ibb.co/gtPtw1p/Screenshot-10.png" target="_blank" alt="Screenshot-10"
       border="0" /></a>
 
+  <a href="https://ibb.co/Ry72KZb"><img src="https://i.ibb.co/6BNYSVw/Screenshot-46.png" alt="Screenshot-46" border="0" /></a>
   
   My website : <a href="http://nishantdev.epizy.com/">NishantDev</a>
 
