@@ -4,9 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-  return redirect()->route('property.index');
-});
+Route::get('/', 'PropertyController@index');
 
 /** Property realestate routes */
 Route::group(['prefix' => 'real-estate'], function () {
@@ -24,7 +22,9 @@ Route::group(['prefix' => 'real-estate'], function () {
 Route::group(['prefix' => 'account'], function () {
   Route::get('/login', 'AccountController@accountLogin')->name('user.login');
   Route::get('/logout', 'AccountController@accountLogout')->name('user.logout');
+  //creating a user
   Route::post('/login', 'UserController@store')->name('user.store');
+
   //grouped routes for static pages
   Route::get('/{page}', 'AccountController')
     ->name('page')
