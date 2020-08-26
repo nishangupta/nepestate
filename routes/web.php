@@ -42,13 +42,3 @@ Route::group(['prefix' => 'account'], function () {
   Route::post('/user-profile/password-change', 'AccountController@passwordChange')->name('user.account.passwordChange');
   Route::post('/user-profile/profile-img-change', 'AccountController@profileImgChange')->name('user.account.profileImgChange');
 });
-
-Route::get('/my-prof', function () {
-  $arr =  [
-    'name' => 'Nishant Gupta',
-    'phone' => '123123123'
-  ];
-
-  return "<i> " . $arr['name'] .
-    "</i>";
-});
