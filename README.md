@@ -21,18 +21,18 @@ Nepestate is a Real-estate website made with laravel and vue js.
 
 <p>
     
-  <a href="https://ibb.co/D8PyzrX"><img src="https://i.ibb.co/txwtQLf/Capture.png" target="_blank" alt="Capture" border="0" /></a>
+  <a href="https://i.ibb.co/txwtQLf/Capture.png"><img src="https://i.ibb.co/txwtQLf/Capture.png" target="_blank" alt="Capture" border="0" /></a>
   
-  <a href="https://ibb.co/26Zsqcv"><img src="https://i.ibb.co/Jd3ynrv/Screenshot-23.png" target="_blank" alt="Screenshot-23"
+  <a href="https://i.ibb.co/Jd3ynrv/Screenshot-23.png"><img src="https://i.ibb.co/Jd3ynrv/Screenshot-23.png" target="_blank" alt="Screenshot-23"
       border="0" /></a>
 
   <a href="https://i.ibb.co/3S2vMHf/Screenshot-9.png"><img src="https://i.ibb.co/3S2vMHf/Screenshot-9.png" target="_blank" alt="Screenshot-9"
       border="0" /></a>
 
-  <a href="https://ibb.co/HGxGYvs"><img src="https://i.ibb.co/gtPtw1p/Screenshot-10.png" target="_blank" alt="Screenshot-10"
+  <a href="https://i.ibb.co/gtPtw1p/Screenshot-10.png"><img src="https://i.ibb.co/gtPtw1p/Screenshot-10.png" target="_blank" alt="Screenshot-10"
       border="0" /></a>
 
-  <a href="https://ibb.co/Ry72KZb"><img src="https://i.ibb.co/6BNYSVw/Screenshot-46.png" alt="Screenshot-46" border="0" /></a>
+  <a href="https://i.ibb.co/6BNYSVw/Screenshot-46.png"><img src="https://i.ibb.co/6BNYSVw/Screenshot-46.png" alt="Screenshot-46" border="0" /></a>
   
   My website : <a href="http://nishantdev.epizy.com/">NishantDev</a>
 
