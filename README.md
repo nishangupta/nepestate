@@ -22,15 +22,12 @@ Nepestate is a Real-estate website made with laravel and vue js.
       border="0" /></a>
 
   <a href="https://i.ibb.co/6BNYSVw/Screenshot-46.png"><img src="https://i.ibb.co/6BNYSVw/Screenshot-46.png" alt="Screenshot-46" border="0" /></a>
-  
-
-
 </p>
 
 ## Installations
 <br />
 ## 1. Clone the repository
-> https://github.com/nishangupta/nepestate.git
+>https://github.com/nishangupta/nepestate.git
 <br />
 ## 2. Set the basic config
 >Edit example.env to .env <br />
@@ -45,15 +42,15 @@ Nepestate is a Real-estate website made with laravel and vue js.
 '''
 <br />
 ## 3. Install Dependencies
-> ~composer install  <br />
-> ~npm install
+>~composer install  <br />
+>~npm install
 <br />
 ## 4. Migrate Database
-> ~php artisan migrate:fresh <br />
-> ~php artisan db:seed
+>~php artisan migrate:fresh <br />
+>~php artisan db:seed
 <br />
 # 5. Serve application
-> ~php artisan serve <br />
+>~php artisan serve <br />
 
 
  My website : <a href="http://nishantdev.epizy.com/">NishantDev</a>
