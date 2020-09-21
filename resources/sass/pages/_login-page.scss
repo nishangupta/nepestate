@@ -23,6 +23,7 @@
     background-image: url("/img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: scroll;
     .user-login {
         padding: 2rem;
         width: 35vw;
@@ -55,6 +56,9 @@
 @media screen and (max-width: 786px) {
     .login-container {
         .user-login {
+            margin-top: 4rem;
+            padding-top: 4rem;
+            margin-bottom: 4rem;
             width: 75vw;
         }
     }
