@@ -26,6 +26,8 @@ Nepestate is a Real-estate website made with laravel and vue js.
 
 ## Installations
 <br />
+## If you receive and error while installation below::
+> run composer update instead of composer install..
 
 ## 1. Clone the repository
 >https://github.com/nishangupta/nepestate.git
