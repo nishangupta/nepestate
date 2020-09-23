@@ -3,7 +3,7 @@
 @section('content')
 <div class="property-index">
   <div class="container-fluid">
-    <section class="hero">
+  <section class="hero" style="background-image:url('{{asset('img/search-background.jpg')}}');">
       <div class="row">
         <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
           <div class="hero-caption">
@@ -25,7 +25,7 @@
     </section>
     <section class="feature-section py-5">
       <div class="container">
-        <h2 class="feature-hdr text-center">See how Nepestate can help</h2>
+        <h2 class="feature-hdr page-header my-4 text-center">See how Nepestate can help</h2>
         <div class="row text-center">
           <div class="col-sm-12 col-md-4">
             <a class="feature-item card" href="#">
@@ -122,7 +122,6 @@
 
 @push('css')
 <style>
-
 
 </style>
 @endpush

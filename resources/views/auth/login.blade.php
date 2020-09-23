@@ -13,11 +13,14 @@
           <p class="d-none text-warning"><i class="fas fa-excamation-circle"></i> Email address</p>
         </div>
         <div class="form-group mb-2">
-        <input type="text" placeholder="Password" class="modal-email form-control" name="password" value="{{old('password')}}">
+        <input type="password" placeholder="Password" class="modal-email form-control" name="password" value="">
           <p class="d-none text-warning"><i class="fas fa-excamation-circle"></i> Password</p>
         </div>
         <button type="submit" class="btn btn-block primary-btn" onclick="this.form.submit()">Submit</button>
       </form>
+      <div class="text-right py-2">
+        <a href="{{route('password.request')}}" class="text-light">Forgot Password ?</a>
+      </div>
       <input type="hidden" user_email value="{{auth()->user()->email?? ''}}">
       <hr>
       <div>Or</div>
@@ -49,7 +52,7 @@
 $(document).ready(function(){
   $userEmail = document.querySelector('[user_email]').value;
     if($userEmail !== ''){
-      Swal.fire({
+      swal.fire({
       title:'You are already logged in as '+ $userEmail,
       text:'Do you want to log out!',
       icon:'question',

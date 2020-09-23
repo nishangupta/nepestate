@@ -100,8 +100,13 @@ button {
     }
 }
 .danger-btn {
-    background-color: #d93c23;
+    background-color: $danger-color;
     color: white;
+    &:hover {
+        background-color: white;
+        color: $danger-color;
+        border: 1px solid $danger-color;
+    }
 }
 .navbar-brand {
     letter-spacing: 0.1rem;

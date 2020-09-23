@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\UserType;
+use App\UserInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -14,28 +14,18 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth', ['except' => 'store']);
     }
-    public function index()
-    {
-        //
-    }
-
-
-    public function create()
-    {
-        //
-    }
-
 
     public function store(Request $request)
     {
-        //user who clicks submit btn get logged out
+        //logging out first if auth user
         if (auth()->user()) {
+            Alert::info('You were logged out!')->toToast();
             Auth::logout(auth()->user());
         }
 
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->only('email', 'password'), [
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
@@ -59,9 +49,19 @@ class UserController extends Controller
             $newUser->name = $username;
             $newUser->email = request()->email;
             $newUser->password = Hash::make(request()->password);
+            //putting default values in user info
+
 
             if ($newUser->save()) {
-                return redirect()->route('user.account');
+                $newUserInfo = new UserInfo;
+                $newUserInfo->user_id = $newUser->id;
+                $newUserInfo->profile_img = 'img/changeprofile.png';
+                $newUserInfo->fullname = $username;
+                $newUserInfo->user_type = 1;
+                $newUserInfo->location = 'Not specified';
+                $newUserInfo->save();
+                Auth::login($newUser);
+                return redirect()->route('page', 'user-profile');
             } else {
                 return redirect()->back();
             }
@@ -69,7 +69,7 @@ class UserController extends Controller
             //user exists
             if (Hash::check(request()->password, $user->password)) {
                 Auth::login($user);
-                return redirect()->route('user.account');
+                return redirect()->route('page', 'user-profile');
             } else {
                 Alert::warning('Incorrect password')->toToast();
                 return redirect('/login')->withInput();
@@ -77,6 +77,15 @@ class UserController extends Controller
         }
     }
 
+    public function index()
+    {
+        //
+    }
+
+    public function create()
+    {
+        //
+    }
 
     public function show($id)
     {
@@ -99,36 +108,5 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function accountLogin()
-    {
-        if (auth()->user()) {
-            Alert::toast();
-            return view('auth.login')->with('success', 'Do you want to logout');
-        } else {
-            return redirect('/login');
-        }
-    }
-    public function accountLogout()
-    {
-        Auth::logout(auth()->user());
-        return redirect()->route('login');
-    }
-
-    public function accountIndex()
-    {
-        $user = auth()->user();
-        $userTypes = UserType::all();
-        $userType = $user->userInfo->user_type;
-        return view('real-estate.account-index', compact('user', 'userTypes'));
-    }
-
-    public function accountRentalResume()
-    {
-        return view('real-estate.account-rental-resume');
-    }
-    public function savedHomes()
-    {
-        return view('real-estate.saved-homes');
     }
 }

@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //comment UserTypeSeeder if already userTypes already exits
         $this->call(UserTypeSeeder::class);
+        $this->call(PropertySeeder::class);
     }
 }

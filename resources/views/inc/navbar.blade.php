@@ -13,15 +13,15 @@
     <li class="nav-item"><a href="{{route('property.mortage')}}" class="nav-link">Mortage</a></li>
   </ul>
   <ul class="navbar-nav mx-auto">
-    <li class="nav-item"><a href="{{route('user.savedHomes')}}" class="nav-link">Saved Homes</a></li>
-    <li class="nav-item"><a href="{{route('user.rentalResume')}}" class="nav-link">Rental Resune</a></li>
+    <li class="nav-item"><a href="{{route('page','saved-homes')}}" class="nav-link">Saved Homes</a></li>
+    <li class="nav-item"><a href="{{route('page','rental-resume')}}" class="nav-link">Rental Resume</a></li>
   </ul>
   <ul class="navbar-nav ml-auto">
     @auth
     <li class="nav-item dropdown">
       <a href="{{route('user.login')}}" class="primary-btn dropdown-toggle" data-toggle="dropdown">Logged in as {{auth()->user()->name}}</a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
-        <a class="dropdown-item" href="{{route('user.account')}}">
+        <a class="dropdown-item" href="{{route('page','user-profile')}}">
           <span class="dropdown-link" >User account</span>
         </a>
         <a class="dropdown-item" href="{{route('user.logout')}}">

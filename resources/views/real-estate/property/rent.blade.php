@@ -8,17 +8,10 @@
         <div class="list-view-top d-flex justify-content-between">
           <div class="w-75">
             <h5 class="list-view-hdr">
-              @if($searchedProperty)
-              <span class="font-weight-bold">
-                {{$properties->total()}} homes available in Nep-Estate Listed below
-              </span>
-              @else
-                No homes available with the keyword " <span class="text-info">{{request()->property}}</span> " <br>
-                You can see other Available homes below
-              @endif</h5>
+              Homes for Rent
+            </h5>
             <hr>
             <p class="list-view-text text-info">
-              Homes for Sale near '{{$properties->first()->address}}'
             </p>
           </div>
           <div class="form-group">
@@ -35,47 +28,22 @@
         </div>
         <div class="property-list">
           <div class="row">
-            @foreach ($properties as $property)
-            <div class="col-md-6 col-sm-6">
-              <div class="property-card" >
-                <img src="{{asset('img/camera.jpg')}}" alt="" class="img-fluid">
-                <div class="property-card-body border">
-                  <a href="{{route('property.show',['property'=>1])}}">
-                    <h5 class="property-price badge badge-info">${{number_format($property->price)}}</h5>
-                    <div class="d-flex my-2">
-                      <div class="badge badge-secondary"><i class="fas fa-bed"></i> {{$property->bed}} beds</div>
-                      <div class="badge badge-secondary mx-2"><i class="fas fa-bath"></i> {{$property->bath}} baths</div>
-                      <div class="badge badge-secondary"><i class="fas fa-mountain"></i> {{$property->area}} sqft</div>
-                    </div>
-                    <p class="property-name">{{$property->name}}</p>
-                    <p class="text-muted property-address">{{$property->address}}</p>
-                  </a>
-                </div>
-              </div>
+            <div class="container text-center">
+              <h3 class="">Unfortunately, there are no available homes for rental OR. <br>
+                Try searching for a different location or neighborhood.</h3>
+                <img src="{{asset('img/NoResult.svg')}}" alt="">
             </div>
-            @endforeach 
-          </div>
+          </div> 
         </div>
         <div class="list-view-paginator">
           <ul class="link-list">
-
-            @if($paginator->hasPages())
-              @foreach($elements as $elem => $data)
-                <a href="{{$data}}" class="link-list-item {{ $elem == $paginator->currentPage() ? 'current-page': '' }}">
-                  <p class="link">{{$elem}}</p>
-                </a>
-              @endforeach
-            @else
               <li class="link-list-item">
               <a href="{{ url()->current() }}" class="">1</a>
               </li>
-            @endif
-            
             <li class="link-list-item">
-              <a href="{{end($properties->render()->elements[0])}}"><i class="fas fa-angle-right"></i></a>
+              <a href="#"><i class="fas fa-angle-right"></i></a>
             </li>
           </ul>
-          <p class="total-pagination">{{$properties->render()->paginator->total()}} Results</p>
         </div>
         <div class="list-footer">
           <p class="list-footer-text">Zillow Group is committed to ensuring digital accessibility for individuals with
@@ -93,8 +61,7 @@
           <div class="mapouter">
             <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
                 src="https://maps.google.com/maps?ll=27.7172453,85.3239605&q=Kathmandu&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>undefined<a
-                href="undefined">undefined</a>undefined</div>
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
             <style>
               .mapouter {
                 position: relative;
@@ -120,19 +87,11 @@
 
 @push('css')
 <style>
-.list-footer {
-  margin: 2rem 0;
-  padding: 0 1rem;
-}
-.list-footer-text {
-        font-size: 0.8rem;
-        color: grey;
-}
+ 
 </style>
 @endpush
 
 @push('js')
 <script>
-
 </script>
 @endpush

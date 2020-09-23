@@ -2,5 +2,11 @@
 @extends('layouts.app')
 @section('layout-holder')
     @include('inc.navbar')
-    @yield('content')
+    <main>
+        <div class="account-view">
+        {{-- Account Navigation Sidebar here --}}
+        @include('inc.account-nav')
+        @yield('content')
+        </div>
+    </main>
 @endsection

@@ -1,9 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+//Nepestate custom styling
 
+@import "inc/roboto-font";
 @import "inc/default";
 @import "inc/navbar";
+//for pages in views folder
 @import "pages/index-page";
-@import "pages/list-page";
-@import "pages/account-page";
+@import "pages/property";
+@import "pages/account";
+
 @import "pages/login-page";
 @import "inc/footer";
