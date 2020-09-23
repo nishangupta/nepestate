@@ -102,12 +102,15 @@ class UserPropertyController extends Controller
       'name' => 'required|min:3',
       'address' => 'required|min:3',
       'price' => 'required|integer',
+      'negotiable' => 'boolean|sometimes',
       'bed' => 'required|integer',
       'bath' => 'required|integer',
       'area' => 'required|integer',
       'description' => 'required|min:5',
       'img' => 'required|image|max:5000',
-      'agent' => 'required|min:3'
+      'agent' => 'required|min:3',
+      'telephone' => 'required|min:10',
+      'email' => 'required|email',
     ], $merge));
   }
   protected function propertySave($request, $property)
@@ -115,11 +118,14 @@ class UserPropertyController extends Controller
     $property->name = $request->name;
     $property->address = $request->address;
     $property->price = $request->price;
+    $property->negotiable = $request->negotiable;
     $property->bed = $request->bed;
     $property->bath = $request->bath;
     $property->area = $request->area;
     $property->description = $request->description;
     $property->agent = $request->agent;
+    $property->telephone = $request->telephone;
+    $property->email = $request->email;
     $property->user_id = auth()->user()->id;
 
     if ($request->hasFile('img')) {

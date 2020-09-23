@@ -17,12 +17,15 @@ class CreatePropertiesTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('price');
+            $table->boolean('negotiable');
             $table->string('address');
             $table->text('description');
             $table->unsignedMediumInteger('bed');
             $table->string('img_url');
             $table->unsignedMediumInteger('bath');
             $table->unsignedBigInteger('area');
+            $table->string('telephone');
+            $table->string('email');
             $table->string('agent')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->boolean('onSale')->default(1);

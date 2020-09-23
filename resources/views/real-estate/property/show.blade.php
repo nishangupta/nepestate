@@ -32,11 +32,11 @@
             </div>
             <div class="col-md-6 col-sm-12">
               <h2 class="page-header text-info">${{ number_format($property->price)}}</h2>
-              <p>Est.Mortgage $4,706/mo</p>
               <div class="d-flex my-2 btn-group">
                 <button class="btn btn-sm btn-info">Get Pre-Qualified</button>
                 <button class="btn btn-sm btn-outline-info"><i class="fas fa-map"></i> Map location</button>
               </div>
+           
             </div>
           </div>
           <hr>
@@ -70,6 +70,97 @@
         </div> <!-- property-desc-grid row end-->
       </div>
       <hr>
+      <section class="qualification-section" id="qualificationSection">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="card">
+              <div class="card-header">Contact information</div>
+              <div class="card-body">
+                {{-- <p class="card-title p-0 my-0">Best company</p> --}}
+                <p class="card-body">
+                  <p>
+                    Price:
+                    <strong>
+                      @if($property->negotiable)
+                      Negotiable
+                      @else
+                      Fixed
+                      @endif
+                    </strong>
+                  </p>
+                  <p>
+                    Full Address:
+                    <strong>
+                      {{$property->address}}
+                    </strong>
+                  </p>
+                  <p class="card-text">
+                    Telephone
+                    <strong>
+                      <i class="fas fa-phone"></i>
+                      +3752912345
+                    </strong>
+                  </p>
+                  <p class="card-text">
+                    Email
+                    <strong>
+                      <i class="fas fa-envelope"></i>
+                      contact@example.com
+
+                    </strong>
+                  </p>
+                  <p class="">
+                    Agent:
+                    <strong>
+                      agent123
+                    </strong>
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <div class="qualification-form">
+              <form action="{{route('property.storeApplication')}}" method="POST">
+                @csrf
+                <input type="hidden" name="property_id" value="{{$property->id}}">
+                <div class="card">
+                  <div class="card-header">Request info</div>
+                  <div class="card-body">
+                    @if($errors->any())
+                      {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+                    @endif
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter name" value="{{old('name')}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" name="email" id="email" aria-describedby="email" placeholder="Enter email"  value="{{old('email')}}">
+                      <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="telephone">Telephone</label>
+                      <input type="text" class="form-control" name="telephone" id="telephone" aria-describedby="telephone" placeholder="Enter telephone"  value="{{old('telephone')}}">
+                      <small id="telephone" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea type="text" class="form-control" name="message" id="message" aria-describedby="message" placeholder="Message" rows="6">
+                        {{old('message')}}
+                      </textarea>
+                    </div>
+                    <button type="submit" class="primary-btn">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
       <section class="review-section">
         <div class="container">
           <div class="review-section-hdr my-2">
@@ -166,7 +257,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 my-2">
               <a href="{{$property->path()}}">
               <div class="similar-property">
-                <div class="card ">
+                <div class="card shadow">
                   <img src="{{asset($miniProperty->img_url)}}" class="img-fluid mini-property-img" alt="">
                   <div class="card-body">
                     <h3 class="text-info">${{ number_format($miniProperty->price) }}</h3>

@@ -16,6 +16,7 @@ Route::group(['prefix' => 'real-estate'], function () {
   Route::get('/rent', 'PropertyController@rent')->name('property.rent');
   Route::get('/mortage', 'PropertyController@mortage')->name('property.mortage');
   Route::get('/{property}-{slug}', 'PropertyController@show')->name('property.show');
+  Route::post('/property-application', 'PropertyApplicationController@store')->name('property.storeApplication');
 });
 
 //user accounts
@@ -30,6 +31,7 @@ Route::group(['prefix' => 'account'], function () {
     ->name('page')
     ->where('page', 'user-profile|saved-homes|rental-resume');
 
+  //account/* routes for UserPropertyController
   Route::get('/property-listings', 'UserPropertyController@index')->name('user.propertyListings');
   Route::get('/property-listings/create', 'UserPropertyController@create')->name('user.propertyCreate');
   Route::get('/property-listings/{property}', 'UserPropertyController@show')->name('user.propertyShow');

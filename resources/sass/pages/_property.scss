@@ -145,6 +145,17 @@
         scale: 1;
     }
 }
+
+//qualification-section for clients
+.qualification-section {
+    .card-header {
+        background-color: #e8eaeb;
+    }
+    .card-body {
+        padding: 0.5rem;
+    }
+}
+
 .property-show {
     .img-gallery {
         display: grid;

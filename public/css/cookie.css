@@ -1,0 +1,67 @@
+.grt-cookie {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.grt-cookie-active {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.grt-cookie p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.35;
+    color: #333;
+    font-weight: normal;
+}
+
+.grt-cookie p a {
+    color: #333;
+    text-decoration: underline;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.grt-cookie-button {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 3px 18px;
+    margin-left: 12px;
+    background: #333;
+    color: #fff;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .grt-cookie {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .grt-cookie p,
+    .grt-cookie p a {
+        font-size: 13px;
+    }
+
+    .grt-cookie-button {
+        font-size: 13px;
+        padding: 3px 14px;
+        margin: 8px 0 0 0;
+    }
+}

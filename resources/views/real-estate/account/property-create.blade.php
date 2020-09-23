@@ -46,10 +46,15 @@
                       @error('price')
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
+                      <br>  
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="negotiable" {{ old('negotiable') == true ? 'checked' : '' }} id="">
+                        <label class="form-check-label" for="exampleCheck1">Is negotiable *</label>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row mb-4">
                   <div class="col-lg-4 col-sm-10">
                     <div class="form-group">
                       <label for="">Bed rooms *</label>
@@ -66,14 +71,6 @@
                     <div class="form-group">
                       <label for="">Square feet *</label>
                       <input type="number" class="form-control @error('area') input-error @enderror" min="1" placeholder="sq.ft" name="area" value="{{old('area')}}">
-                    </div>
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <div class="col-lg-4 col-sm-10">
-                    <div class="form-group">
-                      <label for="">Date available </label>
-                      <input type="date" class="form-control" placeholder="" name="date" value="{{old('date')}}">
                     </div>
                   </div>
                 </div>
@@ -113,6 +110,23 @@
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
+                    
+                    <div class="form-group">
+                      <label for="">Agent Telephone *</label>
+                      <input type="text" class="form-control @error('telephone') input-error @enderror" placeholder="" name="telephone" value="{{old('telephone')}}">
+                      @error('telephone')
+                      <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Agent Email *</label>
+                      <input type="email" class="form-control @error('email') input-error @enderror" placeholder="" name="email" value="{{old('email')}}">
+                      @error('email')
+                      <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+                    </div>
+
                     <div class="d-flex align-items-center mb-4">
                       <button type="submit" class="btn btn-info">Publish Listing</button>
                       <p class="mx-4 text-muted"> This listing is free!</p>
