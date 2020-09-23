@@ -7,7 +7,6 @@ Auth::routes();
 Route::get('/', 'PropertyController@index');
 
 /** Property realestate routes */
-Route::post('/property-application', 'PropertyApplicationController@store')->name('property.storeApplication');
 Route::group(['prefix' => 'real-estate'], function () {
   Route::get('/', 'PropertyController@index')->name('property.index');
   Route::get('/search', 'PropertyController@search')->name('property.search');
@@ -17,6 +16,7 @@ Route::group(['prefix' => 'real-estate'], function () {
   Route::get('/rent', 'PropertyController@rent')->name('property.rent');
   Route::get('/mortage', 'PropertyController@mortage')->name('property.mortage');
   Route::get('/{property}-{slug}', 'PropertyController@show')->name('property.show');
+  Route::post('/property-application', 'PropertyApplicationController@store')->name('property.storeApplication');
 });
 
 //user accounts
