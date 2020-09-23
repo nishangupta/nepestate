@@ -113,14 +113,34 @@
     </section>
   </div>
 </div>
+<div class="grt-cookie"> 
+  <div class="grt-cookies-msg">
+   <p> We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you accept and understand our <a href="">Privacy Policy</a>, and our <a href="">Terms of Service</a>. </p> 
+  </div> 
+  <span class="grt-cookie-button">Accept</span>
+ </div>
 @endsection
 
 
 @push('js')
+<script src="{{asset('js/cookie.js')}}"></script>
+<script>
+    $(".grt-cookie").grtCookie({
+			// Main text and background color
+			textcolor: "#333",
+			background: "#fff",
+			// Button colors
+			buttonbackground: "#c40b14",
+			buttontextcolor: "#fff",
+			// Duration in days
+			duration: 365,
+		});
+</script>
 @endpush
 
 
 @push('css')
+<link rel="stylesheet" href="{{asset('css/cookie.css')}}">
 <style>
 
 </style>
