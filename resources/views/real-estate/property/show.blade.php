@@ -122,27 +122,34 @@
 
           <div class="col-sm-12 col-md-6">
             <div class="qualification-form">
-              <form action="">
+              <form action="{{route('property.storeApplication')}}" method="POST">
+                @csrf
+                <input type="hidden" name="property_id" value="{{$property->id}}">
                 <div class="card">
                   <div class="card-header">Request info</div>
                   <div class="card-body">
+                    @if($errors->any())
+                      {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+                    @endif
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter name">
+                      <input type="text" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter name" value="{{old('name')}}">
                     </div>
                     <div class="form-group">
                       <label for="email">Email address</label>
-                      <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+                      <input type="email" class="form-control" name="email" id="email" aria-describedby="email" placeholder="Enter email"  value="{{old('email')}}">
                       <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
                       <label for="telephone">Telephone</label>
-                      <input type="text" class="form-control" id="telephone" aria-describedby="telephone" placeholder="Enter telephone">
+                      <input type="text" class="form-control" name="telephone" id="telephone" aria-describedby="telephone" placeholder="Enter telephone"  value="{{old('telephone')}}">
                       <small id="telephone" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
                       <label for="message">Message</label>
-                      <textarea type="text" class="form-control" id="message" aria-describedby="message" placeholder="Message" rows="6"></textarea>
+                      <textarea type="text" class="form-control" name="message" id="message" aria-describedby="message" placeholder="Message" rows="6">
+                        {{old('message')}}
+                      </textarea>
                     </div>
                     <button type="submit" class="primary-btn">Submit</button>
                   </div>
@@ -250,7 +257,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 my-2">
               <a href="{{$property->path()}}">
               <div class="similar-property">
-                <div class="card ">
+                <div class="card shadow">
                   <img src="{{asset($miniProperty->img_url)}}" class="img-fluid mini-property-img" alt="">
                   <div class="card-body">
                     <h3 class="text-info">${{ number_format($miniProperty->price) }}</h3>
