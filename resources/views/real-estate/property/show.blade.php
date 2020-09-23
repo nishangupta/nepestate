@@ -32,7 +32,6 @@
             </div>
             <div class="col-md-6 col-sm-12">
               <h2 class="page-header text-info">${{ number_format($property->price)}}</h2>
-              <p>Est.Mortgage $4,706/mo</p>
               <div class="d-flex my-2 btn-group">
                 <button class="btn btn-sm btn-info">Get Pre-Qualified</button>
                 <button class="btn btn-sm btn-outline-info"><i class="fas fa-map"></i> Map location</button>
@@ -79,6 +78,16 @@
               <div class="card-body">
                 {{-- <p class="card-title p-0 my-0">Best company</p> --}}
                 <p class="card-body">
+                  <p>
+                    Price:
+                    <strong>
+                      @if($property->negotiable)
+                      Negotiable
+                      @else
+                      Fixed
+                      @endif
+                    </strong>
+                  </p>
                   <p>
                     Full Address:
                     <strong>
