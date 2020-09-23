@@ -37,6 +37,7 @@
                 <button class="btn btn-sm btn-info">Get Pre-Qualified</button>
                 <button class="btn btn-sm btn-outline-info"><i class="fas fa-map"></i> Map location</button>
               </div>
+           
             </div>
           </div>
           <hr>
@@ -70,6 +71,80 @@
         </div> <!-- property-desc-grid row end-->
       </div>
       <hr>
+      <section class="qualification-section" id="qualificationSection">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="card">
+              <div class="card-header">Contact information</div>
+              <div class="card-body">
+                {{-- <p class="card-title p-0 my-0">Best company</p> --}}
+                <p class="card-body">
+                  <p>
+                    Full Address:
+                    <strong>
+                      {{$property->address}}
+                    </strong>
+                  </p>
+                  <p class="card-text">
+                    Telephone
+                    <strong>
+                      <i class="fas fa-phone"></i>
+                      +3752912345
+                    </strong>
+                  </p>
+                  <p class="card-text">
+                    Email
+                    <strong>
+                      <i class="fas fa-envelope"></i>
+                      contact@example.com
+
+                    </strong>
+                  </p>
+                  <p class="">
+                    Agent:
+                    <strong>
+                      agent123
+                    </strong>
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <div class="qualification-form">
+              <form action="">
+                <div class="card">
+                  <div class="card-header">Request info</div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+                      <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="telephone">Telephone</label>
+                      <input type="text" class="form-control" id="telephone" aria-describedby="telephone" placeholder="Enter telephone">
+                      <small id="telephone" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea type="text" class="form-control" id="message" aria-describedby="message" placeholder="Message" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="primary-btn">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
       <section class="review-section">
         <div class="container">
           <div class="review-section-hdr my-2">
