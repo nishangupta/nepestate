@@ -118,7 +118,7 @@ class UserPropertyController extends Controller
     $property->name = $request->name;
     $property->address = $request->address;
     $property->price = $request->price;
-    $property->negotiable = $request->negotiable;
+    $property->negotiable = $request->negotiable ? 1 : 0;
     $property->bed = $request->bed;
     $property->bath = $request->bath;
     $property->area = $request->area;

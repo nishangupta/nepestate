@@ -46,9 +46,9 @@
                       @error('price')
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
-                      <br>  
+                      <br>
                       <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="negotiable" {{ old('negotiable') == true ? 'checked' : '' }} id="">
+                        <input type="checkbox" class="form-check-input" name="negotiable" value="1" {{ old('negotiable') == 1 ? 'checked' : '' }} id="">
                         <label class="form-check-label" for="exampleCheck1">Is negotiable *</label>
                       </div>
                     </div>
@@ -110,7 +110,6 @@
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
-                    
                     <div class="form-group">
                       <label for="">Agent Telephone *</label>
                       <input type="text" class="form-control @error('telephone') input-error @enderror" placeholder="" name="telephone" value="{{old('telephone')}}">
@@ -139,11 +138,12 @@
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   </div><!-- jumbotron -->
   @include('inc.account-footer')
-</div><!--account-content -->
+</div>
+<!--account-content -->
 @endsection
 
 @push('js')
@@ -152,11 +152,12 @@
 
 @push('css')
 <style>
-.jumbotron{
-  min-height: 80vh;
-}
-.input-error{
-  border-color:#f1c0c4;
-}
+  .jumbotron {
+    min-height: 80vh;
+  }
+
+  .input-error {
+    border-color: #f1c0c4;
+  }
 </style>
 @endpush
