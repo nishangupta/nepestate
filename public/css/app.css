@@ -12749,7 +12749,6 @@ button {
 @media screen and (max-width: 786px) {
   .login-container .user-login {
     margin-top: 4rem;
-    padding-top: 4rem;
     margin-bottom: 4rem;
     width: 75vw;
   }
