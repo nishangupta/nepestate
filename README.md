@@ -65,6 +65,6 @@ Nepestate is a Real-estate website made with laravel and vue js.
 >~php artisan serve <br />
 
 
- My website : [NishantDev](http://nishantdev.epizy.com/)
+
 
 
